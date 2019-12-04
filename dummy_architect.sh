@@ -19,12 +19,12 @@ cd $SETUP_DIR
 echo "press enter to kill broker, architect and minecraft server."
 sleep 1
 
-if [[ ! -f .setup_complete ]]; then
+if [[ ! -f $SETUP_DIR/.setup_complete ]]; then
 	echo "running setup before starting the servers"
 	setup_spigot $MC_VERSION
 	setup_spigot_plugin 1.1.3
 	setup_infrastructure release-1.1.3
-    touch .setup_complete
+    touch $SETUP_DIR/.setup_complete
 fi
 
 # this order is important:
