@@ -28,7 +28,7 @@ if [[ ! -f .setup_complete ]]; then
 	rm -rf infrastructure simple-architect spigot-plugin
 	setup_spigot_plugin d5487ba
 	setup_infrastructure release-1.1.4
-	setup_simple-architect e4b69ac
+	setup_simple-architect cba399b
     touch .setup_complete
 fi
 

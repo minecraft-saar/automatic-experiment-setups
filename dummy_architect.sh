@@ -12,19 +12,19 @@ MC_VERSION=1.14.4
 SCRIPTDIR=$(cd $(dirname $0); pwd)
 source $SCRIPTDIR/functions.sh
 
-SETUP_DIR=${1:-experiment-setup}
+SETUP_DIR=${1:-dummy}
 mkdir -p $SETUP_DIR
 cd $SETUP_DIR
 
 echo "press enter to kill broker, architect and minecraft server."
 sleep 1
 
-if [[ ! -f $SETUP_DIR/.setup_complete ]]; then
+if [[ ! -f .setup_complete ]]; then
 	echo "running setup before starting the servers"
 	setup_spigot $MC_VERSION
 	setup_spigot_plugin 1.1.3
 	setup_infrastructure release-1.1.3
-    touch $SETUP_DIR/.setup_complete
+    touch .setup_complete
 fi
 
 # this order is important:
