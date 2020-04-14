@@ -43,6 +43,7 @@ function setup_spigot_plugin {
     ln -s ../../spigot-plugin/communication/build/libs/communication-*-all.jar ../../spigot-server/plugins
     cd ..
     cp server_files/server.properties ../spigot-server
+    cp server_files/bukkit.yml ../spigot-server
     cd ..
 }
 
@@ -53,6 +54,7 @@ function setup_spigot_woz_plugin {
     cp build/libs/woz-*-all.jar ../../spigot-woz/plugins
     cd ..
     cp server_files/server.properties ../spigot-woz 
+    cp server_files/bukkit.yml ../spigot-woz
     cd ..
 }
 
