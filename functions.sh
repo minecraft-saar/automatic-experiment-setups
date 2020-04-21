@@ -7,7 +7,7 @@
 ## (but required) argument.
 
 function setup_spigot {
-    local SPIGOT_VERSION=${1:-1.14.4}
+    local SPIGOT_VERSION=${1:-1.15.2}
     # compile and set up the spigot server
     mkdir spigot-server
     cd spigot-server
@@ -19,7 +19,7 @@ function setup_spigot {
 }
 
 function setup_spigot_woz {
-    local SPIGOT_VERSION=${1:-1.14.4}
+    local SPIGOT_VERSION=${1:-1.15.2}
     # compile and set up the spigot server
     mkdir spigot-woz
     cd spigot-woz
@@ -44,6 +44,7 @@ function setup_spigot_plugin {
     cd ..
     cp server_files/server.properties ../spigot-server
     cp server_files/bukkit.yml ../spigot-server
+    cp server_files/spigot.yml ../spigot-server
     cd ..
 }
 
@@ -55,6 +56,7 @@ function setup_spigot_woz_plugin {
     cd ..
     cp server_files/server.properties ../spigot-woz 
     cp server_files/bukkit.yml ../spigot-woz
+    cp server_files/spigot.yml ../spigot-woz
     cd ..
 }
 
@@ -88,7 +90,7 @@ function setup_simple-architect {
 }
 
 function start_woz {
-    local SPIGOT_VERSION=${1:-1.14.4}
+    local SPIGOT_VERSION=${1:-1.15.2}
     echo "starting minecraft server ..."
     cd spigot-woz
     java -jar spigot-${SPIGOT_VERSION}.jar &
@@ -122,7 +124,7 @@ function start_broker {
 }
 
 function start_mc {
-    local SPIGOT_VERSION=${1:-1.14.4}
+    local SPIGOT_VERSION=${1:-1.15.2}
     echo "starting minecraft server ..."
     cd spigot-server
     java -jar spigot-${SPIGOT_VERSION}.jar &
