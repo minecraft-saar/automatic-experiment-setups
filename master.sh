@@ -20,18 +20,13 @@ echo "press enter to kill broker, architect and minecraft server."
 sleep 1
 
 if [[ ! -f .setup_complete ]]; then
-	echo "running setup before starting the servers"
-	if [[ ! -f .spigot_setup ]]; then
-		setup_spigot $MC_VERSION
-		# setup_spigot_woz $MC_VERSION
-		touch .spigot_setup
-	fi
-	rm -rf infrastructure simple-architect spigot-plugin
-	setup_minecraft-nlg master
-	setup_spigot_plugin master
-	# setup_spigot_woz_plugin
-	setup_infrastructure master
-	setup_simple-architect master
+    echo "running setup before starting the servers"
+    rm -rf infrastructure simple-architect spigot-plugin
+    setup_minecraft-nlg master
+    setup_spigot_plugin master
+    # setup_spigot_woz_plugin
+    setup_infrastructure master
+    setup_simple-architect master
     touch .setup_complete
 fi
 
@@ -40,7 +35,8 @@ fi
 
 # start_simple-architect
 # start_woz
-start_simple-architect
+start_simple-architect Block "10000"
+start_simple-architect Highlevel "10001"
 
 start_broker
 start_mc $MC_VERSION
