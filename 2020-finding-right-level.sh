@@ -29,6 +29,19 @@ if [[ ! -f .setup_complete ]]; then
     setup_infrastructure master
     setup_simple-architect master
     cp ../configs/broker-config-2020-finding-right-level.yaml infrastructure/broker/broker-config.yaml
+    if [[ $(hostname) = "minecraft" ]]; then
+	if [[ -z ${SECRETWORD+x} ]]; then
+	    echo "You need to declare the secret word before setting up this experiment"
+	    echo "e.g. SECRETWORD=foo ./2020-finding-right-level.sh"
+	    exit 1
+	fi
+	# We use an external questionnaire for these experiments
+	echo "useInternalQuestionnaire: false" >> infrastructure/broker/broker-config.yaml
+	echo "secretWord: $SECRETWORD" >> simple-architect/architect-config.yaml
+    else
+	# nobody on our test server is getting paid
+	echo "showSecret: false" >> simple-architect/architect-config.yaml
+    fi
     touch .setup_complete
 fi
 
