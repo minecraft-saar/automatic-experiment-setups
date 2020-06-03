@@ -11,7 +11,7 @@ architectServers:
    port: 10000
  - hostname: localhost
    port: 10001
-- hostname: localhost
+ - hostname: localhost
    port: 10002
 
 database:
