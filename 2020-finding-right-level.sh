@@ -26,7 +26,7 @@ if [[ ! -f .setup_complete ]]; then
     setup_minecraft-nlg 4da39a42cdfbf84f1c835e074fb0d99facbf67ec
     setup_spigot_plugin 710753efdc28d39adbe5891db7d3a5c39e5aea00
     # setup_spigot_woz_plugin
-    setup_infrastructure 570bfcaca696b0573890efed370fbea2a6f183ab
+    setup_infrastructure 6ea9cbf83e3993f8d0a13ba6f459c985793fc462
     setup_simple-architect b91b4c73f6642a111bd6748f04378d5098048166
     cp ../configs/broker-config-2020-finding-right-level.yaml infrastructure/broker/broker-config.yaml
     if [[ $(hostname) = "minecraft" ]]; then
