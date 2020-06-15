@@ -75,7 +75,7 @@ function start_woz {
     local SPIGOT_VERSION=${1:-1.15.2}
     echo "starting minecraft server ..."
     cd spigot-woz
-    java -jar spigot-${SPIGOT_VERSION}.jar &
+    java -jar spigot-${SPIGOT_VERSION}.jar 2>&1 | tee -a log &
     cd ..
     sleep 40
 }
@@ -83,7 +83,7 @@ function start_woz {
 function start_dummy-architect {
     echo "starting the dummy architect ..."
     cd infrastructure
-    ./gradlew architect:run &
+    ./gradlew architect:run 2>&1 | tee -a log &
     cd ..
     sleep 2
 }
@@ -93,7 +93,7 @@ function start_simple-architect {
     local TYPE=${1:-""}
     local PORT=${2:-10000}
     cd simple-architect
-    ./gradlew run$TYPE --args="$PORT" &
+    ./gradlew run$TYPE --args="$PORT" 2>&1 | tee -a log-$TYPE-$PORT &
     cd ..
     sleep 2
 }
@@ -102,7 +102,7 @@ function start_simple-architect {
 function start_broker {
     echo "starting the broker ..."
     cd infrastructure
-    ./gradlew broker:run &
+    ./gradlew broker:run 2>&1 | tee -a log &
     sleep 5
     cd ..
 }
@@ -112,7 +112,7 @@ function start_mc {
     echo "starting minecraft server ..."
     echo $PWD
     cd spigot-plugin
-    ./start.sh $SPIGOT_VERSION
+    ./start.sh $SPIGOT_VERSION 2>&1 | tee -a log &
     cd ..
 }
 
