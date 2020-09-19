@@ -21,6 +21,7 @@ function setup_spigot_woz {
 
 function setup_spigot_plugin {
     local VERSION=$1
+    # spigot version is ignored by all newer setup.sh scripts (mid-2020)
     local SPIGOT_VERSION=${2:-1.15.2}
     # compile and set up the plugin
     git clone git@github.com:minecraft-saar/spigot-plugin.git
@@ -53,12 +54,16 @@ function setup_minecraft-nlg {
 
 function setup_infrastructure {
     local VERSION=$1
+    local DATABASE=${2:-MINECRAFT}
     git clone git@github.com:minecraft-saar/infrastructure.git
     cd infrastructure
     git checkout $VERSION
     ./gradlew build
     ./gradlew publishToMavenLocal
     cp broker/example-broker-config.yaml broker/broker-config.yaml
+    # The default database is MINECRAFT.  Change it to the
+    # database we want.
+    sed -i s/MINECRAFT/$DATABASE/ broker/broker-config.yaml
     cd ..
 }
 
@@ -113,6 +118,15 @@ function start_mc {
     echo $PWD
     cd spigot-plugin
     ./start.sh $SPIGOT_VERSION 2>&1 | tee -a log &
+    cd ..
+}
+
+function start_replay_mc {
+    # version ignored in recent plugin versions
+    echo "starting minecraft server ..."
+    echo $PWD
+    cd spigot-plugin
+    ./start_replay_server.sh 2>&1 | tee -a log &
     cd ..
 }
 

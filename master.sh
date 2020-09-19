@@ -35,8 +35,7 @@ fi
 
 # start_simple-architect
 # start_woz
-start_simple-architect Block "10000"
-start_simple-architect Highlevel "10001"
+start_simple-architect Medium "10000"
 
 start_broker
 start_mc $MC_VERSION
