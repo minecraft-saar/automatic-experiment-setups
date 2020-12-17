@@ -130,8 +130,22 @@ function start_replay_mc {
     cd ..
 }
 
+# https://stackoverflow.com/a/26966800
+function kill_descendant_processes {
+    local pid="$1"
+    local and_self="${2:-false}"
+    if children="$(pgrep -P "$pid")"; then
+        for child in $children; do
+            kill_descendant_processes "$child" true
+        done
+    fi
+    if [[ "$and_self" == true ]]; then
+        kill "$pid"
+    fi
+}
+
 function wait_end {
     echo "press enter to kill broker, architect and minecraft server."
     read
-    pkill -P $$
+    kill_descendant_processes $$
 }

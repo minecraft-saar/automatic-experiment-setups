@@ -1,0 +1,19 @@
+port: 2802
+
+httpPort: 8080
+
+scenarios:
+ - house
+ - bridge
+
+architectServers:
+ - hostname: localhost
+   port: 10000
+ - hostname: localhost
+   port: 10001
+ - hostname: localhost
+   port: 10002
+
+database:
+  url: "jdbc:mariadb://localhost:3306/RANDOMIZEDWEIGHTS"
+  username: "minecraft"
