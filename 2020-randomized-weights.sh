@@ -23,7 +23,7 @@ if [[ ! -f .setup_complete ]]; then
     setup_spigot_plugin ceff42861ec7f8f4dbbd6a8ed777c1bfbff78b94
     # setup_spigot_woz_plugin
     setup_infrastructure 0b279d9860b2f39cbf73926be9e56fbea93b7f18
-    setup_simple-architect df835894eb049fd2f3539bf96ce02f74183be098
+    setup_simple-architect 002519611e824a337733b6309cadc3a950b18354
     cp ../configs/broker-config-2020-randomized-weights.yaml infrastructure/broker/broker-config.yaml
     if [[ $(hostname) = "minecraft" ]]; then
 	if [[ -z ${SECRETWORD+x} ]]; then
