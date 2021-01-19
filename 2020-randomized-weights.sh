@@ -42,14 +42,18 @@ if [[ ! -f .setup_complete ]]; then
     touch .setup_complete
 fi
 
+mariadb -u minecraft <<EOF
+CREATE DATABASE IF NOT EXISTS RANDOMIZEDWEIGHTS;
+EOF
+
 # this order is important:
 # architect -> broker -> mc server
 
 # start_simple-architect
 # start_woz
-start_simple-architect Block "10000"
+#start_simple-architect Block "10000"
 start_simple-architect Medium "10001"
-start_simple-architect Highlevel "10002"
+#start_simple-architect Highlevel "10002"
 sleep 5
 
 start_broker
