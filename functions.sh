@@ -95,10 +95,17 @@ function start_dummy-architect {
 
 function start_simple-architect {
     echo "starting the simple architect ..."
-    local TYPE=${1:-""}
-    local PORT=${2:-10000}
+    local CONFIG=${1:-""}
+    local PORT=${2:-"0"}
+    if [[ $PORT -ne 0 ]]; then
+	ARGS="$CONFIG $PORT"
+    else
+	ARGS=$CONFIG
+    fi
     cd simple-architect
-    ./gradlew run$TYPE --args="$PORT" 2>&1 | tee -a log-$TYPE-$PORT &
+    # uses character replacement ${VAR//a/b} to replace all a with b
+    # but here a is / and b is - and therefore it looks funny.
+    ./gradlew run --args="$ARGS" 2>&1 | tee -a log-${CONFIG///-} &
     cd ..
     sleep 2
 }
