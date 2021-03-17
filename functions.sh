@@ -105,7 +105,7 @@ function start_simple-architect {
     cd simple-architect
     # uses character replacement ${VAR//a/b} to replace all a with b
     # but here a is / and b is - and therefore it looks funny.
-    ./gradlew run --args="$ARGS" 2>&1 | tee -a log-${CONFIG///-} &
+    ./gradlew run --args="$ARGS" 2>&1 | tee -a log-${CONFIG////-} &
     cd ..
     sleep 2
 }
@@ -124,7 +124,7 @@ function start_mc {
     echo "starting minecraft server ..."
     echo $PWD
     cd spigot-plugin
-    ./start.sh $SPIGOT_VERSION 2>&1 | tee -a log &
+    ./start.sh $SPIGOT_VERSION 0</dev/null 2>&1 | tee -a log &
     cd ..
 }
 
@@ -147,12 +147,17 @@ function kill_descendant_processes {
         done
     fi
     if [[ "$and_self" == true ]]; then
-        kill "$pid"
+        kill -15 "$pid" || true
     fi
 }
 
 function wait_end {
     echo "press enter to kill broker, architect and minecraft server."
     read
+    # send sigterm to all processes in this process group
+    echo "terminating programs ..."
+    # kill -15 -$$
+    sleep 1
+    # do some complicated stuff I am not convinced to work
     kill_descendant_processes $$
 }
