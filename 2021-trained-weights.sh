@@ -34,7 +34,7 @@ if [[ ! -f .setup_complete ]]; then
 	# We use an external questionnaire for these experiments
 	echo "useInternalQuestionnaire: false" >> infrastructure/broker/broker-config.yaml
     fi
-    sed -i "s/secretWord:.*/secretword: $SECRETWORD/" simple-architect/configs/*yaml
+    sed -i "s/secretWord:.*/secretWord: $SECRETWORD/" simple-architect/configs/*yaml
     sed -i "s/MINECRAFTTEST/TRAINEDWEIGHTS/" simple-architect/configs/*yaml
     touch .setup_complete
 fi
