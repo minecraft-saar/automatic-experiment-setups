@@ -18,6 +18,11 @@ echo "press enter to kill broker, architect and minecraft server."
 sleep 1
 
 if [[ ! -f .setup_complete ]]; then
+    if [[ -z ${SECRETWORD+x} ]]; then
+	echo "You need to declare the secret word before setting up this experiment"
+	echo "e.g. SECRETWORD=foo ./2021-trained-weights.sh"
+	exit 1
+    fi
     echo "running setup before starting the servers"
     rm -rf infrastructure simple-architect spigot-plugin
     setup_spigot_plugin f5f6e564739031be453d4d9b3e90eb64bef4e403
@@ -26,19 +31,11 @@ if [[ ! -f .setup_complete ]]; then
     setup_simple-architect 6d3c02d3ddb716ad326ed81602650480f289d535
     cp ../configs/broker-config-2021-trained-weights.yaml infrastructure/broker/broker-config.yaml
     if [[ $(hostname) = "minecraft" ]]; then
-	if [[ -z ${SECRETWORD+x} ]]; then
-	    echo "You need to declare the secret word before setting up this experiment"
-	    echo "e.g. SECRETWORD=foo ./2021-trained-weights.sh"
-	    exit 1
-	fi
 	# We use an external questionnaire for these experiments
 	echo "useInternalQuestionnaire: false" >> infrastructure/broker/broker-config.yaml
-	sed -i "/secretWord:.*/secretword: $SECRETWORD/" simple-architect/configs/*yaml
-    else
-	# nobody on our test server is getting paid
-	echo "showSecret: false" >> simple-architect/architect-config.yaml
     fi
-    echo "randomizeWeights: true" >> simple-architect/architect-config.yaml
+    sed -i "s/secretWord:.*/secretword: $SECRETWORD/" simple-architect/configs/*yaml
+    sed -i "s/MINECRAFTTEST/TRAINEDWEIGHTS/" simple-architect/configs/*yaml
     touch .setup_complete
 fi
 
