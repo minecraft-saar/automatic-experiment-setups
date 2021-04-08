@@ -28,7 +28,7 @@ if [[ ! -f .setup_complete ]]; then
     setup_spigot_plugin f5f6e564739031be453d4d9b3e90eb64bef4e403
     # setup_spigot_woz_plugin
     setup_infrastructure 42894960f7080bd8ad0d4de7582d422c0a6934b4
-    setup_simple-architect 751e3a50b82f04671f1112560a74a53ca0038928
+    setup_simple-architect b1fc6bcaaf43c3aba1645a9a54d12b7195e2af6b
     cp ../configs/broker-config-2021-trained-weights.yaml infrastructure/broker/broker-config.yaml
     if [[ $(hostname) = "minecraft" ]]; then
 	# We use an external questionnaire for these experiments
