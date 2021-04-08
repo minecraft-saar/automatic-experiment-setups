@@ -28,6 +28,9 @@ function setup_spigot_plugin {
     cd spigot-plugin
     git checkout ${VERSION}
     ./setup.sh $SPIGOT_VERSION
+    if [[ ! $(hostname) = "minecraft" ]]; then
+	sed -i 's/banPlayers:.*/banPlayers: false/' server/plugins/CommunicationPlugin/config.yml
+    fi
     cd ..
 }
 
