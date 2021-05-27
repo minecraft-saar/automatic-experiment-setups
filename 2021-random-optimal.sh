@@ -10,7 +10,7 @@ MC_VERSION=1.16.4
 SCRIPTDIR=$(cd $(dirname $0); pwd)
 source $SCRIPTDIR/functions.sh
 
-SETUP_DIR=${1:-2021-trained-weights}
+SETUP_DIR=${1:-2021-random-optimal}
 mkdir -p $SETUP_DIR
 cd $SETUP_DIR
 
