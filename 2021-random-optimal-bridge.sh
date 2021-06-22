@@ -43,7 +43,7 @@ if [[ ! -f .setup_complete ]]; then
     setup_spigot_plugin 4b7b5badf5734dad58cd2e0a808cac1b2ea4a730
     # setup_spigot_woz_plugin
     setup_infrastructure 37020aadc09e71c27630c7ed0c3b93fefc57732a
-    setup_simple-architect 6eb96832516f40d5152547223a13a50ebc061941
+    setup_simple-architect 53da6d203ef820339260697e1afa0599ec40fff3
     cp ../configs/broker-config-2021-random-optimal-bridge.yaml infrastructure/broker/broker-config.yaml
     if [[ $(hostname) = "minecraft" ]]; then
 	# We use an external questionnaire for these experiments
@@ -72,9 +72,10 @@ start_simple-architect configs/highlevel-randomized.yaml "10002"
 start_simple-architect configs/block-optimal.yaml "10003"
 start_simple-architect configs/teaching-optimal.yaml "10004"
 start_simple-architect configs/highlevel-optimal.yaml "10005"
-sleep 5
+sleep 20
 
 start_broker
+sleep 20
 start_mc $MC_VERSION
 
 wait_end
