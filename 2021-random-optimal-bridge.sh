@@ -19,7 +19,7 @@ set -e
 set -u
 
 MC_VERSION=1.17
-USE_DEV_SERVER=true
+export USE_DEV_SERVER=false
 
 SCRIPTDIR=$(cd $(dirname $0); pwd)
 source $SCRIPTDIR/functions.sh
@@ -40,10 +40,10 @@ if [[ ! -f .setup_complete ]]; then
     fi
     echo "running setup before starting the servers"
     rm -rf infrastructure simple-architect spigot-plugin
-    setup_spigot_plugin 1a13d9471ed16d3b06a5c2803d9820363b559355
+    setup_spigot_plugin 4b7b5badf5734dad58cd2e0a808cac1b2ea4a730
     # setup_spigot_woz_plugin
-    setup_infrastructure b55a0d869c226bcaa20d7b626bb91a4252ba543a
-    setup_simple-architect a47658febdc124d2168be0ba4951cfc53458a521
+    setup_infrastructure 37020aadc09e71c27630c7ed0c3b93fefc57732a
+    setup_simple-architect b7546d3400ebd857f5d4aad61c61c446a199eae4
     cp ../configs/broker-config-2021-random-optimal-bridge.yaml infrastructure/broker/broker-config.yaml
     if [[ $(hostname) = "minecraft" ]]; then
 	# We use an external questionnaire for these experiments
