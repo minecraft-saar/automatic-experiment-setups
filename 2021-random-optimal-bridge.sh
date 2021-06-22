@@ -43,7 +43,7 @@ if [[ ! -f .setup_complete ]]; then
     setup_spigot_plugin 4b7b5badf5734dad58cd2e0a808cac1b2ea4a730
     # setup_spigot_woz_plugin
     setup_infrastructure 37020aadc09e71c27630c7ed0c3b93fefc57732a
-    setup_simple-architect b7546d3400ebd857f5d4aad61c61c446a199eae4
+    setup_simple-architect 6eb96832516f40d5152547223a13a50ebc061941
     cp ../configs/broker-config-2021-random-optimal-bridge.yaml infrastructure/broker/broker-config.yaml
     if [[ $(hostname) = "minecraft" ]]; then
 	# We use an external questionnaire for these experiments
