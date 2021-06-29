@@ -20,6 +20,7 @@ echo "press enter to kill broker, architect and minecraft server."
 sleep 1
 
 if [[ ! -f .setup_complete ]]; then
+    git clone https://github.com/minecraft-saar/shared-resources.git
     echo "running setup before starting the servers"
     rm -rf infrastructure simple-architect spigot-plugin
     setup_minecraft-nlg master
@@ -28,6 +29,9 @@ if [[ ! -f .setup_complete ]]; then
     setup_infrastructure master
     setup_simple-architect master
     touch .setup_complete
+    for target in minecraft-nlg infrastructure/broker spigot-plugin/communication simple-architect; do
+	echo "includeBuild '$PWD/shared-resources'" >> settings.gradle
+    done
 fi
 
 # this order is important:
