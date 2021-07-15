@@ -44,7 +44,7 @@ if [[ ! -f .setup_complete ]]; then
     # setup_spigot_woz_plugin
     setup_infrastructure 37020aadc09e71c27630c7ed0c3b93fefc57732a
     setup_simple-architect 2967cae61aac0b1cd403bc72db50526cd6bec815
-    cp ../configs/broker-config-2021-random-optimal-bridge.yaml infrastructure/broker/broker-config.yaml
+    cp ../configs/broker-config-2021-speed-verbosity-tradeoff.yaml infrastructure/broker/broker-config.yaml
     if [[ $(hostname) = "minecraft" ]]; then
 	# We use an external questionnaire for these experiments
 	echo "useInternalQuestionnaire: false" >> infrastructure/broker/broker-config.yaml
@@ -60,7 +60,15 @@ if [[ ! -f .setup_complete ]]; then
 	sed -i "s|__WEIGHTFILE__|${weights}|" $cfg
     done
     sed -i "s/secretWord:.*/secretWord: $SECRETWORD/" simple-architect/configs/*yaml
-    sed -i "s/MINECRAFTTEST/SPEEDVERBOSITY/" simple-architect/configs/*yaml    
+    sed -i "s/MINECRAFTTEST/SPEEDVERBOSITY/" simple-architect/configs/*yaml
+
+    port=10000
+    for i in $(ls simple-architect/configs | grep "yaml$"); do
+	echo " - hostname: localhost" >> infrastructure/broker/broker-config.yaml
+	echo "   port: $port" >> infrastructure/broker/broker-config.yaml
+	port=$((port+1))
+    done
+
     touch .setup_complete
 fi
 
