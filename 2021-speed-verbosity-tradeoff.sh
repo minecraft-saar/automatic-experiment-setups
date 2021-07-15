@@ -43,7 +43,7 @@ if [[ ! -f .setup_complete ]]; then
     setup_spigot_plugin 4324de457811c6ef722d68ad4c68cab26a8c530f
     # setup_spigot_woz_plugin
     setup_infrastructure 37020aadc09e71c27630c7ed0c3b93fefc57732a
-    setup_simple-architect 2967cae61aac0b1cd403bc72db50526cd6bec815
+    setup_simple-architect dd34f68430e9a8ac00cef6bde1eed6b751cbe029
     cp ../configs/broker-config-2021-speed-verbosity-tradeoff.yaml infrastructure/broker/broker-config.yaml
     if [[ $(hostname) = "minecraft" ]]; then
 	# We use an external questionnaire for these experiments
