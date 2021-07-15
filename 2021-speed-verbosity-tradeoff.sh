@@ -55,9 +55,11 @@ if [[ ! -f .setup_complete ]]; then
     for i in $(ls ../configs/2021-speed-verbosity-tradeoff/ | grep 'plan$'); do
 	cfg=simple-architect/configs/${i%plan}yaml
 	weights=$(cd ../configs/2021-speed-verbosity-tradeoff/weights; pwd)/${i%plan}json
+	plan=$(cd ../configs/2021-speed-verbosity-tradeoff/; pwd)/$i
 	cp ../configs/2021-speed-verbosity-tradeoff/architect.yaml $cfg
 	sed -i "s/__NAME__/${i%.plan}/" $cfg
 	sed -i "s|__WEIGHTFILE__|${weights}|" $cfg
+	sed -i "s|__PLANFILE__|${plan}|" $cfg
     done
     sed -i "s/secretWord:.*/secretWord: $SECRETWORD/" simple-architect/configs/*yaml
     sed -i "s/MINECRAFTTEST/SPEEDVERBOSITY/" simple-architect/configs/*yaml
