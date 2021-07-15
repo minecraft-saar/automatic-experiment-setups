@@ -1,4 +1,5 @@
 *~
-# also ignore als subdirectories
+# also ignore all subdirectories
 */
 !/configs/
+!/configs/**
