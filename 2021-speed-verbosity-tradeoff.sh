@@ -45,10 +45,6 @@ if [[ ! -f .setup_complete ]]; then
     setup_infrastructure 37020aadc09e71c27630c7ed0c3b93fefc57732a
     setup_simple-architect def7e0613d8976cd1163c533291fd0c2042317c7
     cp ../configs/broker-config-2021-speed-verbosity-tradeoff.yaml infrastructure/broker/broker-config.yaml
-    if [[ $(hostname) = "minecraft" ]]; then
-	# We use an external questionnaire for these experiments
-	echo "useInternalQuestionnaire: false" >> infrastructure/broker/broker-config.yaml
-    fi
 
     rm simple-architect/configs/*yaml
     
@@ -71,6 +67,12 @@ if [[ ! -f .setup_complete ]]; then
 	port=$((port+1))
     done
 
+    if [[ $(hostname) = "minecraft" ]]; then
+	# We use an external questionnaire for these experiments
+	echo "useInternalQuestionnaire: false" >> infrastructure/broker/broker-config.yaml
+    fi
+
+    
     touch .setup_complete
 fi
 
