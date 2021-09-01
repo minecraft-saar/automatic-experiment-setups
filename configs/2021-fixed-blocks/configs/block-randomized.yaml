@@ -1,0 +1,7 @@
+name: block-randomweights
+port: 10000
+secretWord: Foobar
+timeoutMinutes: 10
+timeoutMinBlocks: 4
+instructionlevel: BLOCK
+weightSource: random
