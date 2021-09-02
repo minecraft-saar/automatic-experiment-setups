@@ -43,7 +43,7 @@ if [[ ! -f .setup_complete ]]; then
     setup_spigot_plugin 0418ccfa69aa08ff71110767158b18f8d34564a6
     # setup_spigot_woz_plugin
     setup_infrastructure 095cc6e336abc0a740f12b237a529f888716cfe6
-    setup_simple-architect c33feba18cc23d8b841f90ff89c7a53cd4dec04a
+    setup_simple-architect fe260ac9ecd501c51f99ebe0f8191dd58db92820
     cp ../configs/broker-config-2021-fixed-blocks.yaml infrastructure/broker/broker-config.yaml
 
     rm simple-architect/configs/*yaml
