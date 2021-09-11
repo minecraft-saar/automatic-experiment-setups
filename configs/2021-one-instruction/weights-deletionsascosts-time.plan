@@ -1,0 +1,30 @@
+( 
+(!build-floor 6.0 66.0 6.0 5.0 3.0 4.0 ) 47388.229442447286 
+(!place-block-hidden stone 7.0 66.0 6.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 8.0 66.0 6.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 9.0 66.0 6.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 10.0 66.0 6.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 6.0 66.0 7.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 7.0 66.0 7.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 8.0 66.0 7.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 9.0 66.0 7.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 10.0 66.0 7.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 6.0 66.0 8.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 7.0 66.0 8.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 8.0 66.0 8.0 100.0 100.0 100.0 ) 0.0 
+(!place-block-hidden stone 9.0 66.0 8.0 100.0 100.0 100.0 ) 0.0 
+(!place-block stone 6.0 67.0 6.0 100.0 100.0 100.0 ) -18737.9253498841 
+(!place-block stone 10.0 67.0 6.0 6.0 67.0 6.0 ) 11586.574176433376 
+(!place-block stone 10.0 68.0 6.0 10.0 67.0 6.0 ) 11035.972434246658 
+(!place-block stone 9.0 68.0 6.0 10.0 68.0 6.0 ) 8307.074309224 
+(!place-block stone 8.0 68.0 6.0 9.0 68.0 6.0 ) 5286.817203827366 
+(!place-block stone 7.0 68.0 6.0 8.0 68.0 6.0 ) 5286.817203827366 
+(!place-block stone 6.0 68.0 6.0 7.0 68.0 6.0 ) -20340.722745606545 
+(!place-block stone 10.0 67.0 8.0 6.0 68.0 6.0 ) -5054.1265094851 
+(!place-block stone 6.0 67.0 8.0 10.0 67.0 8.0 ) -65214.77800162721 
+(!place-block stone 6.0 68.0 8.0 6.0 67.0 8.0 ) -66817.57539734966 
+(!place-block stone 7.0 68.0 8.0 6.0 68.0 8.0 ) 8970.978673656453 
+(!place-block stone 8.0 68.0 8.0 7.0 68.0 8.0 ) 4884.280650448875 
+(!place-block stone 9.0 68.0 8.0 8.0 68.0 8.0 ) 4884.280650448875 
+(!place-block stone 10.0 68.0 8.0 9.0 68.0 8.0 ) -6656.923905207545 
+ ) 
