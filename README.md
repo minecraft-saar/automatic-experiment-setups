@@ -17,3 +17,5 @@ them, you need to create a personal access token for gradle:
  - add the token and your github user name to your global gradle config:
    `~/.gradle/gradle.properties` needs to have two lines added
    `gpr.user=<your GH username>` and `gpr.key=<the Personal Access Token you created>`
+
+Depending on your local settings you have to grant your database user full permissions on the database the experiment creates. 
