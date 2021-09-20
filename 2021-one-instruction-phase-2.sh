@@ -40,7 +40,7 @@ if [[ ! -f .setup_complete ]]; then
     fi
     echo "running setup before starting the servers"
     rm -rf infrastructure simple-architect spigot-plugin
-    setup_spigot_plugin ec33f74fda8f35e2a6d401533b666c918deb86d3
+    setup_spigot_plugin 597f34172adf061d1aa65a2de03f9a517e8a6c4c
     # setup_spigot_woz_plugin
     setup_infrastructure 095cc6e336abc0a740f12b237a529f888716cfe6
     setup_simple-architect b8692fdf4bd9711c1c547a70e9fe58f54ce002db
