@@ -47,7 +47,7 @@ if [[ ! -f .setup_complete ]]; then
     cp ../configs/broker-config-2021-rerun-one-ins.yaml infrastructure/broker/broker-config.yaml
 
     rm simple-architect/configs/*yaml
-    cp -a ../configs/2021-rerun-one-ins/basic-configs/. simple-architect/configs
+    #cp -a ../configs/2021-rerun-one-ins/basic-configs/. simple-architect/configs
 
     for i in $(ls ../configs/2021-rerun-one-ins/plans/ | grep 'lisp$'); do
 	cfg=simple-architect/configs/${i%lisp}yaml
