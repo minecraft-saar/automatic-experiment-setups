@@ -42,8 +42,8 @@ if [[ ! -f .setup_complete ]]; then
     rm -rf infrastructure simple-architect spigot-plugin
     setup_spigot_plugin 597f34172adf061d1aa65a2de03f9a517e8a6c4c
     # setup_spigot_woz_plugin
-    setup_infrastructure 095cc6e336abc0a740f12b237a529f888716cfe6
-    setup_simple-architect b8692fdf4bd9711c1c547a70e9fe58f54ce002db
+    setup_infrastructure 7c7301c10f9340c317cbdc0885427c233b9848e8
+    setup_simple-architect 6da5402388a4656f950ec42f9fb941db787f8974
     cp ../configs/broker-config-2021-rerun-one-ins.yaml infrastructure/broker/broker-config.yaml
 
     rm simple-architect/configs/*yaml
@@ -68,10 +68,10 @@ if [[ ! -f .setup_complete ]]; then
 	port=$((port+1))
     done
 
-    if [[ $(hostname) = "minecraft" ]]; then
+    #if [[ $(hostname) = "minecraft" ]]; then
 	# We use an external questionnaire for these experiments
 	echo "useInternalQuestionnaire: false" >> infrastructure/broker/broker-config.yaml
-    fi
+    #fi
 
     
     touch .setup_complete
