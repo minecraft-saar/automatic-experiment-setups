@@ -1,0 +1,12 @@
+port: 2802
+
+httpPort: 8080
+
+scenarios:
+ - bridge
+
+database:
+  url: "jdbc:mariadb://localhost:3306/TIMEOPTIMIZATION"
+  username: "minecraft"
+
+architectServers:

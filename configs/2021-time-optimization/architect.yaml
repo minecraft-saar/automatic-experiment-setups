@@ -1,0 +1,9 @@
+name: __NAME__
+port: 10000
+secretWord: Foobar
+timeoutMinutes: 10
+timeoutMinBlocks: 4
+instructionlevel: BLOCK
+weightSource: file
+weightFile: __WEIGHTFILE__
+planFile: __PLANFILE__
