@@ -45,7 +45,7 @@ if [[ ! -f .setup_complete ]]; then
     rm -rf infrastructure simple-architect spigot-plugin
     setup_spigot_plugin fa09fee090b9f0a9338a500fca7c37b3a242b722
     # setup_spigot_woz_plugin
-    setup_infrastructure 8464134138aebfa5e83b8b51394d3274939e69fd
+    setup_infrastructure a80b1db1d003ab07096bad1765e7b9f260d28347
     setup_simple-architect bdfb8dff2d69859c097ac58dbb418c5d06af00ad
     cp ../configs/broker-config-$EXPNAME.yaml infrastructure/broker/broker-config.yaml
 
