@@ -43,10 +43,10 @@ if [[ ! -f .setup_complete ]]; then
     fi
     echo "running setup before starting the servers"
     rm -rf infrastructure simple-architect spigot-plugin
-    setup_spigot_plugin fa09fee090b9f0a9338a500fca7c37b3a242b722
+    setup_spigot_plugin 2b8036ee7f525e4f41d85d839b8fc4d490e5af2f
     # setup_spigot_woz_plugin
-    setup_infrastructure a80b1db1d003ab07096bad1765e7b9f260d28347
-    setup_simple-architect bdfb8dff2d69859c097ac58dbb418c5d06af00ad
+    setup_infrastructure 130d1cbf240891bb4f02cceb4da0ccbb12cb0530
+    setup_simple-architect 86c597664a63b03915ef01fdaccb4bce424b75ce
     cp ../configs/broker-config-$EXPNAME.yaml infrastructure/broker/broker-config.yaml
 
     rm simple-architect/configs/*yaml
